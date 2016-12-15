@@ -17,7 +17,11 @@ ggplot theme
 \description{
 theme_levy
 }
-\details{
-8 x 8" png should be about right for single-panel plot
+\examples{
+\dontrun{
+ggplot(data.frame(x = 1:10, y = rnorm(10)), aes(x, y)) +
+  geom_point() +
+  theme_levy()
+  }
 }
 

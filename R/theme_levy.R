@@ -6,10 +6,13 @@
 #' @return ggplot theme
 #' @export
 #' @import ggplot2
-#' @importFrom extrafont fonttable
 #'
-#' @details 8 x 8" png should be about right for single-panel plot
-#'
+#' @examples
+#' \dontrun{
+#' ggplot(data.frame(x = 1:10, y = rnorm(10)), aes(x, y)) +
+#'   geom_point() +
+#'   theme_levy()
+#'   }
 theme_levy <- function(base_size = 12, font = "Source Sans Pro") {
 
   if(!font %in% extrafont::fonttable()[["FamilyName"]]) {
@@ -21,7 +24,10 @@ theme_levy <- function(base_size = 12, font = "Source Sans Pro") {
     theme(
       panel.grid = element_blank(),
       strip.background = element_blank(),
-      strip.text = element_text(size = base_size, face = "bold")
+      strip.text = element_text(size = base_size, face = "bold"),
+      axis.line = element_line(size = .2),
+      panel.border = element_blank()
     )
+
 }
 
